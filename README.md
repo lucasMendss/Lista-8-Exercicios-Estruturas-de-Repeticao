@@ -28,11 +28,11 @@ informados através de código. Os códigos utilizados são:
 5 → voto nulo
 6 → voto em branco
 Escreva um programa leia os votos de “n” candidatos e calcule e imprima:
-a) O total de votos para cada candidato
-b) O total de votos nulos
-c) O total de votos em branco
-d) Porcentagem de votos nulos sobre o total de votos
-e) Porcentagem de votos em branco sobre o total de votos
-Para finalizar a digitação dos votos deve ser digitado o número 0.
+- a) O total de votos para cada candidato
+- b) O total de votos nulos
+- c) O total de votos em branco
+- d) Porcentagem de votos nulos sobre o total de votos
+- e) Porcentagem de votos em branco sobre o total de votos
+- Para finalizar a digitação dos votos deve ser digitado o número 0.
 
 8) Exibir os 30 primeiros valores de série de Fibonacci: 1,1,2,3,5,8,13,...
