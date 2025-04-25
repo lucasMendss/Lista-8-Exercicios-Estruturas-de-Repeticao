@@ -1,4 +1,4 @@
-#OI
+
 1) Fazer um programa que leia as notas P1 e P2 de 5 alunos, a cada leitura exibir a média
 do aluno e ao final, exibir a média geral dos alunos.
 
