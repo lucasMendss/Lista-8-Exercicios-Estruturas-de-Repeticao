@@ -1,0 +1,7 @@
+C:\Users\Windows 11\OneDrive\Estudos\Programação e T.I\C#\Lista - Estruturas de Repetição\Lista - Estruturas de Repetição\bin\Debug\Lista - Estruturas de Repetição.exe.config
+C:\Users\Windows 11\OneDrive\Estudos\Programação e T.I\C#\Lista - Estruturas de Repetição\Lista - Estruturas de Repetição\bin\Debug\Lista - Estruturas de Repetição.exe
+C:\Users\Windows 11\OneDrive\Estudos\Programação e T.I\C#\Lista - Estruturas de Repetição\Lista - Estruturas de Repetição\bin\Debug\Lista - Estruturas de Repetição.pdb
+C:\Users\Windows 11\OneDrive\Estudos\Programação e T.I\C#\Lista - Estruturas de Repetição\Lista - Estruturas de Repetição\obj\Debug\Lista - Estruturas de Repetição.csproj.AssemblyReference.cache
+C:\Users\Windows 11\OneDrive\Estudos\Programação e T.I\C#\Lista - Estruturas de Repetição\Lista - Estruturas de Repetição\obj\Debug\Lista - Estruturas de Repetição.csproj.CoreCompileInputs.cache
+C:\Users\Windows 11\OneDrive\Estudos\Programação e T.I\C#\Lista - Estruturas de Repetição\Lista - Estruturas de Repetição\obj\Debug\Lista - Estruturas de Repetição.exe
+C:\Users\Windows 11\OneDrive\Estudos\Programação e T.I\C#\Lista - Estruturas de Repetição\Lista - Estruturas de Repetição\obj\Debug\Lista - Estruturas de Repetição.pdb
