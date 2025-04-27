@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -175,6 +175,158 @@ namespace Lista___Estruturas_de_Repetição
                 Console.WriteLine("-- Integrantes da faixa etária 5 (acima de 60 anos): {0} pessoas ({1}%) ", qtdefx5, (qtdefx5 * 100) / 15);
             }
 
+            void Exercicio6()
+            {
+                string sexo = "";
+                int peso = 0, altura = 0, pessoas = 20;
+                int qtdeHomens = 0, qtdeMulheres = 0, somaPesoHomens = 0, somaPesoMulheres = 0, somaALturaHomens = 0, somaALturaMulheres = 0;
+
+                for (int ii = 1; ii <= pessoas; ii++)
+                {
+                    Console.WriteLine("-----------------------------------------");
+                    Console.WriteLine("{0}ª pessoa: ", ii);
+
+                    bool contemApenasLetras = false;
+                    while (!contemApenasLetras)
+                    {
+                        Console.WriteLine("- Digite o sexo (M/F): ");
+                        sexo = Console.ReadLine().ToUpper();
+                        contemApenasLetras = sexo.All(Char.IsLetter);
+
+                        if (!contemApenasLetras || (sexo != "M" && sexo != "F"))
+                        {
+                            Console.WriteLine("Valor inválido.");
+                            contemApenasLetras = false;
+                        }
+                    }
+
+                    bool converteuParaInt = false;
+                    while (!converteuParaInt)
+                    {
+                        Console.WriteLine("- Digite o peso em kg: ");
+                        converteuParaInt = int.TryParse(Console.ReadLine(), out peso);
+
+                        if (!converteuParaInt || peso <= 0)
+                        {
+                            Console.WriteLine("Valor inválido.");
+                            converteuParaInt = false;
+                        }
+                    }
+
+                    converteuParaInt = false;
+                    while (!converteuParaInt)
+                    {
+                        Console.WriteLine("- Digite a altura em cm: ");
+                        converteuParaInt = int.TryParse(Console.ReadLine(), out altura);
+
+                        if (!converteuParaInt || altura <= 0)
+                        {
+                            Console.WriteLine("Valor inválido.");
+                            converteuParaInt = false;
+                        }
+                    }
+
+                    if (sexo == "M")
+                    {
+                        qtdeHomens++;
+                        somaPesoHomens = somaPesoHomens + peso;
+                        somaALturaHomens = somaALturaHomens + altura;
+                    }
+                    else if (sexo == "F")
+                    {
+                        qtdeMulheres++;
+                        somaPesoMulheres = somaPesoMulheres + peso;
+                        somaALturaMulheres = somaALturaMulheres + altura;   
+                    }
+                }
+
+                Console.WriteLine("-----------------------------------------------");
+                Console.WriteLine("-----------------------------------------------");
+                Console.WriteLine("Dados:");
+                Console.WriteLine("");
+                Console.WriteLine("HOMENS:");
+                Console.WriteLine("- Quantidade: {0} homens ({1}%)", qtdeHomens, (qtdeHomens*100)/pessoas);
+                Console.WriteLine("- Peso médio: {0}kg ", (somaPesoHomens / qtdeHomens));
+                Console.WriteLine("- Altura média: {0}m ", (somaALturaHomens / qtdeHomens));
+                Console.WriteLine("-----------------------------");
+                Console.WriteLine("MULHERES:");
+                Console.WriteLine("- Quantidade: {0} mulheres ({1}%)", qtdeMulheres, (qtdeMulheres*100)/pessoas);
+                Console.WriteLine("- Peso médio: {0}kg ", (somaPesoMulheres / qtdeMulheres));
+                Console.WriteLine("- Altura média: {0}m ", (somaALturaMulheres / qtdeMulheres));
+            }
+
+            void Exercicio7()
+            {
+                int voto = 1;
+                int totalVotos = 1;
+                int qtdeVotos1 = 0, qtdeVotos2 = 0, qtdeVotos3 = 0, qtdeVotos4 = 0, qtdeVotosNulos = 0, qtdeVotosBrancos = 0;
+
+                Console.WriteLine("INFORMAÇÕES:");
+                Console.WriteLine("- Para votar no candidato 1 digite 1");
+                Console.WriteLine("- Para votar no candidato 2 digite 2");
+                Console.WriteLine("- Para votar no candidato 3 digite 3");
+                Console.WriteLine("- Para votar no candidato 4 digite 4");
+                Console.WriteLine("- Para votar NULO digite 5");
+                Console.WriteLine("- Para votar BRANCO digite 6");
+                Console.WriteLine("---------------------------------------");
+
+                do
+                {
+                    bool converteuParaInt = false;
+                    while (!converteuParaInt)
+                    {
+                        Console.WriteLine("{0}º VOTO: Digite o seu voto ou finalize a votação digitando '0': ", totalVotos);
+                        converteuParaInt = int.TryParse(Console.ReadLine(), out voto);
+
+                        if (!converteuParaInt || voto < 0 || voto > 6)
+                        {
+                            Console.WriteLine("Valor inválido.");
+                            converteuParaInt = false;
+                        }
+                    }
+                    Console.WriteLine("Voto registrado.");
+                    Console.WriteLine("------------------");
+                    totalVotos++;
+
+                    switch (voto)
+                    {
+                        case 1:
+                            qtdeVotos1++;
+                            break;
+                        case 2:
+                            qtdeVotos2++;
+                            break;
+                        case 3:
+                            qtdeVotos3++;
+                            break; 
+                        case 4:
+                            qtdeVotos4++;
+                            break;
+                        case 5:
+                            qtdeVotosNulos++;
+                            break;
+                        case 6:
+                            qtdeVotosBrancos++; 
+                            break;
+                        default:
+                            converteuParaInt = false;
+                            break;
+                    }
+                }
+                while (voto != 0);
+
+                Console.WriteLine("-----------------------------------------------");
+                Console.WriteLine("-----------------------------------------------");
+                Console.WriteLine("Dados:");
+                Console.WriteLine("");
+                Console.WriteLine("- Candidato 1: {0} votos", qtdeVotos1);
+                Console.WriteLine("- Candidato 2: {0} votos", qtdeVotos2);
+                Console.WriteLine("- Candidato 3: {0} votos", qtdeVotos3);
+                Console.WriteLine("- Candidato 4: {0} votos", qtdeVotos4);
+                Console.WriteLine("- Nulos: {0} votos ({1}%)", qtdeVotosNulos, (qtdeVotosNulos*100)/totalVotos);
+                Console.WriteLine("- Brancos: {0} votos ({1}%)", qtdeVotosBrancos, (qtdeVotosBrancos * 100)/totalVotos);
+            }
+
             void Exercicio8()
             {
                 int a = 1, b = 0, soma = 0;
@@ -186,15 +338,17 @@ namespace Lista___Estruturas_de_Repetição
                     b = a;
                     a = soma;
                     Console.WriteLine(soma); 
-                        
                 }
             }
+
             //Exercicio1();
             //Exercicio2();
             //Exercicio3();
             //Exercicio4();
             //Exercicio5();
-            Exercicio8();
+            //Exercicio6();
+            Exercicio7();
+            //Exercicio8();
         }
     }
 }
