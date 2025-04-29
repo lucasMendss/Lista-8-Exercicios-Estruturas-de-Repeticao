@@ -22,7 +22,7 @@ namespace Lista___Estruturas_de_Repetição
                 {
                     mediaUnica = 0;
                     notasSomadas = 0;
-                    for (int indcNota = 1; indcNota <=2; indcNota ++)
+                    for (int indcNota = 1; indcNota <= 2; indcNota++)
                     {
                         bool converteuParaDouble = false;
 
@@ -38,18 +38,18 @@ namespace Lista___Estruturas_de_Repetição
                                 converteuParaDouble = false;
                             }
                         }
-                        notasSomadas = notasSomadas + notaAtual; 
+                        notasSomadas = notasSomadas + notaAtual;
                     }
                     mediaUnica = (notasSomadas / 2);
                     Console.WriteLine("---------------------------------------------------");
-                    Console.WriteLine("A média do aluno {0} é {1}", indcAluno, mediaUnica);
+                    Console.WriteLine("A média do aluno {0}: {1}", indcAluno, mediaUnica);
                     mediaGeral = mediaGeral + mediaUnica;
                 }
                 Console.WriteLine("---------------------------------------------------");
-                Console.WriteLine("A nota média geral dos alunos é {0}.", (mediaGeral / 5));
+                Console.WriteLine("Média geral dos alunos: {0}", (mediaGeral / 5));
             }
 
-            void Exercicio2 ()
+            void Exercicio2()
             {
                 /* Fazer um programa que leia as notas P1 e P2 de “n” alunos, a cada leitura exibir a
                 média do aluno e perguntar se irá ler as notas de novo aluno. Ao final, exibir a média
@@ -87,6 +87,7 @@ namespace Lista___Estruturas_de_Repetição
                     mediaGeral = mediaGeral + mediaUnica;
 
                     Console.WriteLine("---------------------------------------------------");
+                    
                     Console.WriteLine("Deseja inserir notas de um novo aluno(s/n)?");
                     repetir = Console.ReadLine().ToLower();
                 }
@@ -96,23 +97,23 @@ namespace Lista___Estruturas_de_Repetição
                 Console.WriteLine("A nota média geral dos {0} alunos é {1}.", indcALuno, (mediaGeral / indcALuno));
             }
 
-            void Exercicio3 ()
+            void Exercicio3()
             {
                 /* Escreva um programa que receba a idade de 10 pessoas, calcule e exiba a quantidade
                 de pessoas maiores de idade */
 
                 int qtdeMaiores = 0, idadeAtual = 0;
-               
+
                 for (int ii = 1; ii <= 10; ii++)
                 {
                     bool converteuParaInt = false;
                     while (!converteuParaInt)
                     {
                         Console.WriteLine("-----------------------------------------");
-                        Console.WriteLine("Digite a {0}ª idade: ", ii);
+                        Console.WriteLine("Digite a idade da {0}ª pessoa: ", ii);
                         converteuParaInt = int.TryParse(Console.ReadLine(), out idadeAtual);
 
-                        if (!converteuParaInt|| idadeAtual < 0)
+                        if (!converteuParaInt || idadeAtual < 0)
                         {
                             Console.WriteLine("Idade inválida.");
                             converteuParaInt = false;
@@ -143,7 +144,7 @@ namespace Lista___Estruturas_de_Repetição
             {
                 /* As faixas etárias são: 1 até 15 anos, 16 até 30 anos, 31 até 45 anos, 46 até 60 anos,
                 acima de 60 anos. */
-                int idadeAtual = 0, qtdefx1 = 0, qtdefx2 = 0, qtdefx3 = 0, qtdefx4 = 0, qtdefx5 = 0;
+                int idade = 0, qtdefx1 = 0, qtdefx2 = 0, qtdefx3 = 0, qtdefx4 = 0, qtdefx5 = 0;
                 for (int ii = 1; ii <= 15; ii++)
                 {
                     bool converteuParaInt = false;
@@ -151,28 +152,28 @@ namespace Lista___Estruturas_de_Repetição
                     {
                         Console.WriteLine("-----------------------------------------");
                         Console.WriteLine("Digite a {0}ª idade: ", ii);
-                        converteuParaInt = int.TryParse(Console.ReadLine(), out idadeAtual);
+                        converteuParaInt = int.TryParse(Console.ReadLine(), out idade);
 
-                        if (!converteuParaInt || idadeAtual < 0)
+                        if (!converteuParaInt || idade < 0)
                         {
                             Console.WriteLine("Idade inválida.");
                             converteuParaInt = false;
                         }
                     }
 
-                    if (idadeAtual > 0 && idadeAtual <= 15) qtdefx1++;
-                    else if (idadeAtual > 16 && idadeAtual <= 30) qtdefx2++;
-                    else if (idadeAtual > 30 && idadeAtual <= 45) qtdefx3++;
-                    else if (idadeAtual > 45 && idadeAtual <= 60) qtdefx4++;
+                    if (idade <= 15) qtdefx1++;
+                    else if (idade <= 30) qtdefx2++;
+                    else if (idade <= 45) qtdefx3++;
+                    else if (idade <= 60) qtdefx4++;
                     else qtdefx5++;
                 }
                 Console.WriteLine("-----------------------------------------");
                 Console.WriteLine("Dados: ");
-                Console.WriteLine("-- Integrantes da faixa etária 1 (1 a 15 anos): {0} pessoas ({1}%) ", qtdefx1, (qtdefx1 * 100)/15);
-                Console.WriteLine("-- Integrantes da faixa etária 2 (16 a 30 anos): {0} pessoas ({1}%) ", qtdefx2, (qtdefx2 * 100) / 15);
-                Console.WriteLine("-- Integrantes da faixa etária 3 (31 a 45 anos): {0} pessoas ({1}%) ", qtdefx3, (qtdefx3 * 100) / 15);
-                Console.WriteLine("-- Integrantes da faixa etária 4 (46 a 60 anos): {0} pessoas ({1}%) ", qtdefx4, (qtdefx4 * 100) / 15);
-                Console.WriteLine("-- Integrantes da faixa etária 5 (acima de 60 anos): {0} pessoas ({1}%) ", qtdefx5, (qtdefx5 * 100) / 15);
+                Console.WriteLine("-- Integrantes da faixa etária 1 (1 a 15 anos): {0} pessoas ({1}%) ", qtdefx1, ((qtdefx1 * 100) / 15.0).ToString("N1"));
+                Console.WriteLine("-- Integrantes da faixa etária 2 (16 a 30 anos): {0} pessoas ({1}%) ", qtdefx2, ((qtdefx2 * 100) / 15.0).ToString("N1"));
+                Console.WriteLine("-- Integrantes da faixa etária 3 (31 a 45 anos): {0} pessoas ({1}%) ", qtdefx3, ((qtdefx3 * 100) / 15.0).ToString("N1"));
+                Console.WriteLine("-- Integrantes da faixa etária 4 (46 a 60 anos): {0} pessoas ({1}%) ", qtdefx4, ((qtdefx4 * 100) / 15.0).ToString("N1"));
+                Console.WriteLine("-- Integrantes da faixa etária 5 (acima de 60 anos): {0} pessoas ({1}%) ", qtdefx5, ((qtdefx5 * 100) / 15.0).ToString("N1"));
             }
 
             void Exercicio6()
@@ -236,7 +237,7 @@ namespace Lista___Estruturas_de_Repetição
                     {
                         qtdeMulheres++;
                         somaPesoMulheres = somaPesoMulheres + peso;
-                        somaALturaMulheres = somaALturaMulheres + altura;   
+                        somaALturaMulheres = somaALturaMulheres + altura;
                     }
                 }
 
@@ -245,12 +246,12 @@ namespace Lista___Estruturas_de_Repetição
                 Console.WriteLine("Dados:");
                 Console.WriteLine("");
                 Console.WriteLine("HOMENS:");
-                Console.WriteLine("- Quantidade: {0} homens ({1}%)", qtdeHomens, (qtdeHomens*100)/pessoas);
+                Console.WriteLine("- Quantidade: {0} homens ({1}%)", qtdeHomens, (qtdeHomens * 100) / pessoas);
                 Console.WriteLine("- Peso médio: {0}kg ", (somaPesoHomens / qtdeHomens));
                 Console.WriteLine("- Altura média: {0}m ", (somaALturaHomens / qtdeHomens));
                 Console.WriteLine("-----------------------------");
                 Console.WriteLine("MULHERES:");
-                Console.WriteLine("- Quantidade: {0} mulheres ({1}%)", qtdeMulheres, (qtdeMulheres*100)/pessoas);
+                Console.WriteLine("- Quantidade: {0} mulheres ({1}%)", qtdeMulheres, (qtdeMulheres * 100) / pessoas);
                 Console.WriteLine("- Peso médio: {0}kg ", (somaPesoMulheres / qtdeMulheres));
                 Console.WriteLine("- Altura média: {0}m ", (somaALturaMulheres / qtdeMulheres));
             }
@@ -286,10 +287,14 @@ namespace Lista___Estruturas_de_Repetição
                     }
                     Console.WriteLine("Voto registrado.");
                     Console.WriteLine("------------------");
-                    totalVotos++;
+
+                        totalVotos++;
 
                     switch (voto)
                     {
+                        case 0:
+                            totalVotos--;
+                            break;
                         case 1:
                             qtdeVotos1++;
                             break;
@@ -298,7 +303,7 @@ namespace Lista___Estruturas_de_Repetição
                             break;
                         case 3:
                             qtdeVotos3++;
-                            break; 
+                            break;
                         case 4:
                             qtdeVotos4++;
                             break;
@@ -306,7 +311,7 @@ namespace Lista___Estruturas_de_Repetição
                             qtdeVotosNulos++;
                             break;
                         case 6:
-                            qtdeVotosBrancos++; 
+                            qtdeVotosBrancos++;
                             break;
                         default:
                             converteuParaInt = false;
@@ -319,25 +324,27 @@ namespace Lista___Estruturas_de_Repetição
                 Console.WriteLine("-----------------------------------------------");
                 Console.WriteLine("Dados:");
                 Console.WriteLine("");
+                Console.WriteLine("Total de votos: {0}", totalVotos - 1);
                 Console.WriteLine("- Candidato 1: {0} votos", qtdeVotos1);
                 Console.WriteLine("- Candidato 2: {0} votos", qtdeVotos2);
                 Console.WriteLine("- Candidato 3: {0} votos", qtdeVotos3);
                 Console.WriteLine("- Candidato 4: {0} votos", qtdeVotos4);
-                Console.WriteLine("- Nulos: {0} votos ({1}%)", qtdeVotosNulos, (qtdeVotosNulos*100)/totalVotos);
-                Console.WriteLine("- Brancos: {0} votos ({1}%)", qtdeVotosBrancos, (qtdeVotosBrancos * 100)/totalVotos);
+                Console.WriteLine("- Nulos: {0} votos ({1}%)", qtdeVotosNulos, (qtdeVotosNulos * 100) / totalVotos);
+                Console.WriteLine("- Brancos: {0} votos ({1}%)", qtdeVotosBrancos, (qtdeVotosBrancos * 100) / totalVotos);
             }
 
             void Exercicio8()
             {
-                int a = 1, b = 0, soma = 0;
+                // Exibir os 30 primeiros valores de série de Fibonacci: 1,1,2,3,5,8,13,...
+                int anterior = 1, atual = 0, proximo = 0;
 
                 Console.WriteLine("Sequência de Fibonacci até o 30º valor:");
                 for (int ii = 1; ii <= 30; ii++)
                 {
-                    soma = a + b;
-                    b = a;
-                    a = soma;
-                    Console.WriteLine(soma); 
+                    proximo = anterior + atual;
+                    atual = anterior;
+                    anterior = proximo;
+                    Console.WriteLine(proximo);
                 }
             }
 
@@ -347,8 +354,9 @@ namespace Lista___Estruturas_de_Repetição
             //Exercicio4();
             //Exercicio5();
             //Exercicio6();
-            Exercicio7();
-            //Exercicio8();
+            //Exercicio7();
+            Exercicio8();
         }
     }
 }
+
